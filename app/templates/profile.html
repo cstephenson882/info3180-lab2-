@@ -1,55 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='./css/profile.css')}}">
-</head>
-<body>
-    <header>
-        
-    </header>
-    <main>
-        <div class = "profile image">
-            <img src="{{ url_for('static', filename='images/profile_photo.jpg') }}" alt="Your Image">
-            
-        </div>
-    
-        <h2>{{name}}</h2>
-        <p>{{social_handle}}</p>
-        <p>{{user_address}}</p>
-        <p>{{user_date}}</p>
-        
-    </main>
-    <aside>
-        
-            <div>
-                <p>I have a deep appreciation for web design. The way it combines creativity and functionality to 
-                    create visually appealing and intuitive experiences is fascinating. It's a powerful tool for 
-                    communication and storytelling, and I'm passionate about creating designs that not only look 
-                    great but also enhance the user experience.
-                </p>
-            </div>
-            
-            <div class="tracking">
-            <div>
-                <p class="bold">7</p>
-                <p>Post</p>
-            </div>
-            <div>
-                <p class="bold">100</p>
-                <p>Post</p>
-            </div>
-            <div>
-                <p class="bold">250</p>
-                <p>Post</p>
-            </div>
-        </div>
-            <input type="button">Submit</input>
-        
-  
-    </aside>
+{% extends "base.html" %}
+{% block css %} <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='./css/app.css')}}"> {% endblock%}
+{% block main %}
 
-</body>
-</html>
+<aside>
+<div class = "fisrt">
+    <div class = "profile image">
+        <img src="{{ url_for('static', filename='images/profile_photo.jpg') }}" alt="Your Image">
+        
+    </div>
+
+    <h2>{{name}}</h2>
+    <p>{{social_handle}}</p>
+    <p>{{user_address}}</p>
+    <p>{{user_date}}</p>
+</div>
+<div class = "second">
+    
+    <div class ='about'>
+        <p>I have a deep appreciation for web design. The way it combines creativity and functionality to 
+            create visually appealing and intuitive experiences is fascinating. It's a powerful tool for 
+            communication and storytelling, and I'm passionate about creating designs that not only look 
+            great but also enhance the user experience.
+        </p>
+    </div>
+    
+    <div class="tracking">
+        <div class = "p2">
+            <p class="bold">7</p>
+            <p>Post</p>
+        </div>
+
+        <div class = "p2">
+            <p class="bold">100</p>
+            <p>Following</p>
+        </div>
+
+        <div class = "p2">
+            <p class="bold">250</p>
+            <p>Followers</p>
+        </div>
+        
+
+    </div>
+
+</div>
+<button type="button" class="btn">Follow</button>
+
+</aside>
+{% endblock %}

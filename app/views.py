@@ -22,12 +22,19 @@ def about():
 # The functions below should be applicable to all Flask apps.
 
 ###
+
+from datetime import datetime
+
+def format_date_joined(date_):
+    return date_.strftime('%b, %Y')
+
+
 @app.route('/profile')
 def profile():
-    name = request.args.get('name', 'MaryJane')
-    social_handle = request.args.get('social_handle', '@example')
-    user_address = request.args.get('user_address', '@example')
-    user_date = request.args.get('user_date', 'Feb 17, 2024')
+    name =  'MaryJane3'
+    social_handle = '@example'
+    user_address = 'Kingston,Jamaica'
+    user_date = format_date_joined(datetime.strptime('2024-02-17', '%Y-%m-%d'))
     return render_template('profile.html', name=name, social_handle=social_handle, user_address=user_address, user_date=user_date  )
 
 @app.route('/<file_name>.txt')
